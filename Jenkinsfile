@@ -11,7 +11,7 @@ node('linux'){
         sh "ant -f build.xml -v"
     }
     stage('Deploy'){
-        sh "aws s3 cp ${WORKSPACE}\rectangle-${BUILD_NUMBER}.jar s3://jenkins-collins/"
+        sh "aws s3 cp ${dist.dir}\rectangle-${BUILD_NUMBER}.jar s3://jenkins-collins/"
     }
     
     stage('Reports'){
