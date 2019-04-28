@@ -10,9 +10,8 @@ node('linux'){
         git 'https://github.com/ccollins12000/java-project.git'
         sh "ant -f build.xml -v"
     }
-    
-    stage('Test'){
-        sh "ant -buildfile test.xml"
+    stage('Deploy'){
+        sh "echo ${BUILD_NUMBER}"
     }
     
     stage('Reports'){
