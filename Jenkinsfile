@@ -11,7 +11,7 @@ node('linux'){
         sh "ant -f build.xml -v"
     }
     stage('Deploy'){
-        sh "echo ${BUILD_NUMBER}"
+        sh "echo rectangle-${BUILD_NUMBER}.jar"
     }
     
     stage('Reports'){
